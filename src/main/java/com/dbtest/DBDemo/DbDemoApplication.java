@@ -29,6 +29,9 @@ public class DbDemoApplication implements CommandLineRunner{
 //		Student new_std = studentService.insert(std);
 //		
 //		System.out.println(new_std);
+		
+		
+		
 	}
 
 }
