@@ -10,6 +10,8 @@ import lombok.Setter;
 @Getter
 @Setter
 //	Controller ကနေ လာတဲ့ Data တွေကို DB ထဲတိုက်ရိုက်ပေးမလုပ်ပဲ ဒီထဲမှာ Security ကောင်းအောင် တစ်ဆင့်ကြားခံထားခြင်း
+//	Controller ထဲကဝင်လာတဲ့ Data တွေကို Database ထဲတန်းမဝင်ပဲ StudentDTO ကနေတစ်ဆင့် Student ထဲကို တန်ဖိုးတွေလှမ်းထည့်တယ်
+//	ပြီးရင် DB table ထဲက သက်ဆိုင်တဲ့ student ဆို student တန်ဖိုးတွေကိုယူပြီး ဒီထဲမှာပဲ value တွေပြန်ထည့်ပြီး Calculation တွေလုပ်နိုင်တယ်
 public class StudentDTO {
 
 	private int s_id;
@@ -21,7 +23,6 @@ public class StudentDTO {
 	private int total;
 	
 	public Student convertToEntity(StudentDTO dto) {
-//		controller ထဲကဝင်လာတဲ့ Data တွေကို Database ထဲတန်းမဝင်ပဲ StudentDTO ကနေတစ်ဆင့် Student ထဲကို တန်ဖိုးတွေလှမ်းထည့်တယ်
 		Student entity = new Student();
 		entity.setS_id(dto.s_id);
 		entity.setEmail(dto.email);
