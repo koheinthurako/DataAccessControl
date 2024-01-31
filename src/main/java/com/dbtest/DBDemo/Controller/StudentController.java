@@ -22,6 +22,12 @@ import com.dbtest.DBDemo.service.StudentService;
 @RequestMapping("/std")
 public class StudentController {
 	
+//	ဒီနေရာမှာ အောက်က @Autowired က StudentService ရဲ့ Dependency တွေကိုလိုက်ကြည့်တယ်
+//	StudentService က interface ဖြစ်နေတာကို auto သိသွားပြီး သူ့ကို implements လုပ်ထားတဲ့ class တွေကို လိုက်ဆင်းသွားတယ်
+//	အဲ့ထဲမှာမှ StudentServiceImpl က implements လုပ်ထားပြီး @Configuration နဲ့ Object ဆောက်ခိုင်းထားတော့ @Autowired
+//	က auto object ဆောက်ပေးသွားတယ် သဘောက dependency တွေရဲ့ဆက်စပ်မှုတွေကိုသိနိုင်ပြီး injection ဆိုတဲ့အတိုင်း လုပ်ခွင့်ပေးထားတဲ့အရာတွေကို
+//	auto လုပ်ပေးသွားတဲ့သဘောဖြစ်တယ်
+	
 	@Autowired
 	StudentService studentService;
 	
