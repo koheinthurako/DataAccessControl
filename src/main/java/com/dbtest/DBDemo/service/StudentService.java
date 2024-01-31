@@ -8,6 +8,7 @@ import com.dbtest.DBDemo.DTO.StudentDTO;
 import com.dbtest.DBDemo.entities.Student;
 
 @Service
+//	@Service လို့ထည့်တာက Dependency Injection ရချင်လို့ဖြစ်တယ်
 public interface StudentService {
 	// standard ဖြစ်ချင်ရင် insert နေရာမှာ save နဲ့ရေးကြတယ်
 	public StudentDTO insert(StudentDTO s);

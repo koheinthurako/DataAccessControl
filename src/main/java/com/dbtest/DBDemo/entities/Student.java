@@ -14,7 +14,8 @@ import lombok.ToString;
 @Entity
 //	ဒီ class ကို စတာနဲ့ @Entity keyword ကိုစထည့်တယ် သူက JPA library ထဲက feature တစ်ခု
 //	သူ့ကိုထည့်လိုက်တာနဲ့ Database ထဲမှာ ဒီ class ကို table အနေနဲ့သိသွားတယ်
-//	table အနေနဲ့သိသွားပြီဆိုရင် main program ကို စ run တာနဲ့ Database Table တွေကို auto တန်းဆောက်ပေးသွားတယ်
+//	table အနေနဲ့သိသွားပြီဆိုရင် database ထဲမှာ table ဆောက်နိုင်ဖို့ Spring နဲ့ HiBernate ကိုချိတ်ပေးမယ့် interface တစ်ခုလိုတယ်
+//	အဲ့ဒီ interface က JPARepository ကို extends လှမ်းလုပ်ပေးရမယ် အဲ့တာကို Student.Repo ထဲမှာသွားကြည့်
 @Getter
 @Setter
 @NoArgsConstructor

@@ -13,6 +13,16 @@ import com.dbtest.DBDemo.service.StudentService;
 @Configuration
 public class StudentServiceImpl implements StudentService{
 	
+//	ဒီ class ကို @Configuration နဲ့ object ဆောက်ခိုင်းထားတယ် အဲ့တော့ သူ့ရဲ့ Parent class တစ်ခုခုကို @Autowired ချိတ်လိုက်တာနဲ့
+//	ဒီ class က object ဖြစ်သွားပြီး အောက်က @Autowired ချိတ်ထားတဲ့ StudentRepo ကို အလုပ်လုပ်နိုင်တယ်
+//	@Autowired တွေကိုချိတ်လိုက်ပြီဆိုတာနဲ့ သူက Annotation တွေကနေတစ်ဆင့် ခိုင်းထားတဲ့အလုပ်တွေကို လုပ်ပေးသွားတယ်
+//	ဒီမှာဆိုရင် ‌DbDemoApplication.java ထဲက studentService ကနေတစ်ဆင့် ဒီထဲကိုရောက်လာတယ် ရောက်လာတော့
+//	အပေါ်က @Configuration ဆိုတဲ့အတိုင်း object ဆောက်သွားတယ် ပြီးရင် အောက်က studentRepo ရဲ့
+//	@Autowired ကိုသွားတွေ့တယ် ဒါနဲ့ StudentRepo ထဲကိုထပ်ဆင်းသွားပြီးတော့ @Repository နဲ့ @EnableJpaRepositories annotation
+//	တွေကနေ extends လုပ်ထားတဲ့ JpaRepository<Student> ထဲမှာရှိတဲ့ Student class ကို ဝင်သွားပြီး အဲ့ထဲမှာ ရှိတဲ့
+//	@Entity ဆိုတဲ့ annotation အရ Student က table တစ်ခုအဖြစ်ယူဆလိုက်ပြီး JpaRepository ထဲက HiBernate ကနေတစ်ဆင့်
+//	SQL Statement တွေ run သွားပြီး Database ထဲကို main program run တာနဲ့ auto table တွေဖန်တီးသွားနိုင်တာဖြစ်တယ်
+	
 	@Autowired
 	StudentRepo studentRepo;
 

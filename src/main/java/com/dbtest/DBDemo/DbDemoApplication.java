@@ -8,6 +8,8 @@ package com.dbtest.DBDemo;
  	3. LomBok => Java annotation library which helps to reduce boilerplate code.
  	4. MySQL Driver => MySQL JDBC Driver
  	5. Spring Data JPA => Java Persistence API using Spring Data and HiBernate
+ 	
+ 	Overview start flow => Main - Entity - REPO - Service - ServiceImpl - Controller - DTO 
 */
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,11 @@ public class DbDemoApplication implements CommandLineRunner{
 //	CommandLineRunner interface ထဲက override run() method ကတော့ Main program run တာနဲ့ auto စ run ပေးတဲ့ method
 	@Override
 	public void run(String... args) throws Exception {
+//		program စတာနဲ့ အပေါ်က @Autowired ကအရင်အလုပ်လုပ်တယ် ပြီးရင် ဒီ method run တယ်
+//		အောက်မှာက Student class ကို object ဆောက်ထားပြီး class ထဲကို တန်ဖိုးတွေ ထည့်တယ် အပေါ်မှာ
+//		@Autowired လို့ရေးလိုက်တော့ studentService ရဲ့ dependency တွေကိုလိုက်ရှာပြီး လိုက်ခိုင်းထားတဲ့ annotation တွေအလိုက် inject စလုပ်တယ်
+//		Student.java ထဲကိုသွားကြည့်
+		
 //		Student std = new Student();
 //		std.setEmail("koko@gmail.com");
 //		std.setName("ko ko");
