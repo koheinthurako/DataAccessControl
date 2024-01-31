@@ -1,5 +1,15 @@
 package com.dbtest.DBDemo;
 
+/*
+ 	Dependencies
+ 	1. Spring Web => Build web, including RESTful, applications using Spring MVC
+ 	(Spring MVC => is a library within the Spring framework that simplifies handling HTTP requests and responses
+ 	2. Spring Boot DevTools => liveReload
+ 	3. LomBok => Java annotation library which helps to reduce boilerplate code.
+ 	4. MySQL Driver => MySQL JDBC Driver
+ 	5. Spring Data JPA => Java Persistence API using Spring Data and HiBernate
+*/
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,7 +21,7 @@ import com.dbtest.DBDemo.service.StudentService;
 @SpringBootApplication
 public class DbDemoApplication implements CommandLineRunner{
 	
-//	Spring နဲ့ DB ချိတ်မယ်ဆိုအရင်လို Customize လိုက်ရေးနေစရာမလိုပဲ Spring family ထဲက JPA library ရဲ့ HiBernate တွေကိုသုံးတယ်
+//	Spring နဲ့ DB ချိတ်မယ်ဆိုအရင်လို Customize လိုက်ရေးနေစရာမလိုပဲ Spring family data ထဲက JPA library ရဲ့ HiBernate တွေကိုသုံးတယ်
 //	JPA => Java Persistence API
 //	A JPA (Java Persistence API) is a specification of Java which is used to access,
 //	manage, and persist data between Java object and relational database
