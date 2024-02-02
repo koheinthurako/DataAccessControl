@@ -31,12 +31,17 @@ public class StudentController {
 	@Autowired
 	StudentService studentService;
 	
+	@GetMapping("")
+	public ResponseEntity<List<StudentDTO>> getAll() {
+		return new ResponseEntity<List<StudentDTO>>(studentService.findAll(), HttpStatus.OK);
+	}
+	
 	@GetMapping("/id/{id}")
-	public ResponseEntity<Student> getStd(@PathVariable int id) {
-		Student get_std = studentService.retrieve(id);
+	public ResponseEntity<StudentDTO> getStd(@PathVariable int id) {
+		StudentDTO get_std = studentService.retrieve(id);
 		return (get_std==null) ?
-				new ResponseEntity<Student>(HttpStatus.BAD_REQUEST) :
-				new ResponseEntity<Student>(get_std, HttpStatus.OK);
+				new ResponseEntity<StudentDTO>(HttpStatus.BAD_REQUEST) :
+				new ResponseEntity<StudentDTO>(get_std, HttpStatus.OK);
 	}
 	
 	@PostMapping("/save")
@@ -45,25 +50,20 @@ public class StudentController {
 		return new ResponseEntity<StudentDTO>(new_std, HttpStatus.OK);
 	}
 	
-	@GetMapping("")
-	public ResponseEntity<List<Student>> getAll() {
-		return new ResponseEntity<List<Student>>(studentService.findAll(), HttpStatus.OK);
-	}
-	
 	@GetMapping("/name/{name}")
-	public ResponseEntity<Student> getStdByName(@PathVariable String name) {
-		Student get_std = studentService.findByName(name);
+	public ResponseEntity<StudentDTO> getStdByName(@PathVariable String name) {
+		StudentDTO get_std = studentService.findByName(name);
 		return (get_std==null) ?
-				new ResponseEntity<Student>(HttpStatus.BAD_REQUEST) :
-				new ResponseEntity<Student>(get_std, HttpStatus.OK);
+				new ResponseEntity<StudentDTO>(HttpStatus.BAD_REQUEST) :
+				new ResponseEntity<StudentDTO>(get_std, HttpStatus.OK);
 	}
 	
 	@PutMapping("/update")
-	public ResponseEntity<Student> updateStd(@RequestBody Student std) {
-		Student update_std = studentService.updateStd(std);
+	public ResponseEntity<StudentDTO> updateStd(@RequestBody StudentDTO std) {
+		StudentDTO update_std = studentService.updateStd(std);
 		return (update_std==null) ?
-				new ResponseEntity<Student>(HttpStatus.BAD_REQUEST) :
-				new ResponseEntity<Student>(update_std, HttpStatus.OK);
+				new ResponseEntity<StudentDTO>(HttpStatus.BAD_REQUEST) :
+				new ResponseEntity<StudentDTO>(update_std, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/delete")

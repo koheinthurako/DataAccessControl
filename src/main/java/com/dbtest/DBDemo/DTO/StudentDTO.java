@@ -22,6 +22,7 @@ public class StudentDTO {
 	private int maths;
 	private int total;
 	
+//	@RequestBody(Controller) ကနေ ဝင်လာတဲ့ တန်ဖိုးတွေကို class ထဲက တန်ဖိုးတွေဆီ လှမ်းထည့်တာ
 	public Student convertToEntity(StudentDTO dto) {
 		Student entity = new Student();
 		entity.setS_id(dto.s_id);

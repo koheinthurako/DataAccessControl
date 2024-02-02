@@ -1,5 +1,6 @@
 package com.dbtest.DBDemo.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,44 +27,58 @@ public class StudentServiceImpl implements StudentService{
 	StudentRepo studentRepo;
 
 	StudentDTO dto = new StudentDTO();
+	List<StudentDTO> dtoList = new ArrayList<StudentDTO>(); 
+	
+	@Override
+	public List<StudentDTO> findAll() {
+		List<Student> new_std = studentRepo.findAll();
+		for(Student std : new_std) {
+			dtoList.add(dto.convertToObject(std));
+		}
+		return dtoList;
+	}
 	
 	@Override
 	public StudentDTO insert(StudentDTO std_dto) {
+//		Controller to Entity
 		Student s = dto.convertToEntity(std_dto);
+//		Implement in Database
 		Student new_std = studentRepo.save(s);
+//		Entity to Controller
 		StudentDTO new_std_dto = dto.convertToObject(new_std);
 		new_std_dto.getTotal();
 		return new_std_dto;
 	}
 
 	@Override
-	public Student retrieve(int id) {
+	public StudentDTO retrieve(int id) {
 		Student getStd = studentRepo.findById(id).orElse(null);
-		return getStd;
+		StudentDTO getStdDto = dto.convertToObject(getStd);
+		return getStdDto;
 	}
 
 	@Override
-	public List<Student> findAll() {
-		return studentRepo.findAll();
-	}
-
-	@Override
-	public Student findByName(String name) {
-		return studentRepo.findByName(name);
+	public StudentDTO findByName(String name) {
+		Student std = studentRepo.findByName(name);
+		StudentDTO std_dto = dto.convertToObject(std);
+		return std_dto;
 	}
 	
 	@Override
-	public Student updateStd(Student std) {
-		Student old_std = studentRepo.findById(std.getS_id()).orElse(null);
-		if(old_std!=null) {
-			old_std.setEmail(std.getEmail());
-			old_std.setName(std.getName());
-			old_std.setMyan(std.getMyan());
-			old_std.setEng(std.getEng());
-			old_std.setMaths(std.getMaths());
-			return studentRepo.save(old_std);
+	public StudentDTO updateStd(StudentDTO std) {
+		Student old_std = dto.convertToEntity(std);
+		Student new_std = studentRepo.findById(old_std.getS_id()).orElse(null);
+		if(new_std!=null) {
+			new_std.setEmail(old_std.getEmail());
+			new_std.setName(old_std.getName());
+			new_std.setMyan(old_std.getMyan());
+			new_std.setEng(old_std.getEng());
+			new_std.setMaths(old_std.getMaths());
+			new_std = studentRepo.save(old_std);
+			StudentDTO old_std_dto = dto.convertToObject(new_std);
+			return old_std_dto;
 		}
-		return old_std;
+		return null;
 	}
 
 	@Override
