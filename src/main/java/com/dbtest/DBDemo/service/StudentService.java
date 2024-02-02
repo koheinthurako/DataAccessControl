@@ -16,6 +16,6 @@ public interface StudentService {
 	public StudentDTO retrieve(int id);
 	public StudentDTO findByName(String name);
 	public StudentDTO updateStd(StudentDTO std);
-	public String deleteById(Student std);
-	public List<Student> getDistinction(int mark);
+	public String deleteById(StudentDTO std);
+	public List<StudentDTO> getDistinction(int mark);
 }

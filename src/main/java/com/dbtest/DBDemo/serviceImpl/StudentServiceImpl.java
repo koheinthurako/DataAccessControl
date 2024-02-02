@@ -27,11 +27,12 @@ public class StudentServiceImpl implements StudentService{
 	StudentRepo studentRepo;
 
 	StudentDTO dto = new StudentDTO();
-	List<StudentDTO> dtoList = new ArrayList<StudentDTO>(); 
 	
 	@Override
 	public List<StudentDTO> findAll() {
 		List<Student> new_std = studentRepo.findAll();
+		List<StudentDTO> dtoList = new ArrayList<StudentDTO>();
+		dtoList.clear();
 		for(Student std : new_std) {
 			dtoList.add(dto.convertToObject(std));
 		}
@@ -82,18 +83,26 @@ public class StudentServiceImpl implements StudentService{
 	}
 
 	@Override
-	public String deleteById(Student std) {
-		Student old_std = studentRepo.findById(std.getS_id()).orElse(null);
-		if(old_std!=null) {
-			studentRepo.deleteById(std.getS_id());
+	public String deleteById(StudentDTO std) {
+		Student old_std = dto.convertToEntity(std);
+		Student new_std = studentRepo.findById(old_std.getS_id()).orElse(null);
+		if(new_std!=null) {
+			studentRepo.deleteById(old_std.getS_id());
 			return "Deleted!";
 		}
 		return null;
 	}
 
 	@Override
-	public List<Student> getDistinction(int mark) {
-		return studentRepo.getDistinction(mark, mark, mark);
+	public List<StudentDTO> getDistinction(int mark) {
+		List<Student> stdList = studentRepo.getDistinction(mark, mark, mark);
+		List<StudentDTO> dtoList = new ArrayList<StudentDTO>();
+		dtoList.clear();
+		for(Student std : stdList) {
+			dtoList.add(dto.convertToObject(std));
+		}
+		
+		return dtoList;
 	}
 
 	

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dbtest.DBDemo.DTO.StudentDTO;
-import com.dbtest.DBDemo.entities.Student;
 import com.dbtest.DBDemo.service.StudentService;
 
 @RestController
@@ -67,13 +66,13 @@ public class StudentController {
 	}
 	
 	@DeleteMapping("/delete")
-	public String deleteById(@RequestBody Student std) {
+	public String deleteById(@RequestBody StudentDTO std) {
 		return studentService.deleteById(std);
 	}
 
 	@GetMapping("/getDis/{mark}")
-	public ResponseEntity<List<Student>> getDistinction(@PathVariable int mark) {
-		return new ResponseEntity<List<Student>>(studentService.getDistinction(mark), HttpStatus.OK);
+	public ResponseEntity<List<StudentDTO>> getDistinction(@PathVariable int mark) {
+		return new ResponseEntity<List<StudentDTO>>(studentService.getDistinction(mark), HttpStatus.OK);
 	}
 	
 	
