@@ -18,10 +18,7 @@ public class StudentServiceImpl implements StudentService{
 //	@Autowired တွေကိုချိတ်လိုက်ပြီဆိုတာနဲ့ သူက Annotation တွေကနေတစ်ဆင့် ခိုင်းထားတဲ့အလုပ်တွေကို လုပ်ပေးသွားတယ်
 //	ဒီမှာဆိုရင် ‌DbDemoApplication.java ထဲက studentService ကနေတစ်ဆင့် ဒီထဲကိုရောက်လာတယ် ရောက်လာတော့
 //	အပေါ်က @Configuration ဆိုတဲ့အတိုင်း object ဆောက်သွားတယ် ပြီးရင် အောက်က studentRepo ရဲ့
-//	@Autowired ကိုသွားတွေ့တယ် ဒါနဲ့ StudentRepo ထဲကိုထပ်ဆင်းသွားပြီးတော့ @Repository နဲ့ @EnableJpaRepositories annotation
-//	တွေကနေ extends လုပ်ထားတဲ့ JpaRepository<Student> က အလုပ်လုပ်သွားတယ် ပြီးတော့ ထဲမှာရှိတဲ့ Student class ကို ဝင်သွားပြီး အဲ့ထဲမှာ ရှိတဲ့
-//	@Entity ဆိုတဲ့ annotation အရ Student က table တစ်ခုအဖြစ်ယူဆလိုက်ပြီး JpaRepository ထဲက HiBernate ကနေတစ်ဆင့်
-//	SQL Statement တွေ run သွားပြီး main program စ run တာနဲ့ Database ထဲကို auto table တွေဆောက်ပေးသွားနိုင်တာဖြစ်တယ်
+//	@Autowired ကိုသွားတွေ့တယ် ဒါနဲ့ StudentRepo ထဲကိုထပ်ဆင်းသွားပြီးတော့ အလုပ်လုပ်သွားတယ်
 //	အဓိကကတော့ spring ရဲ့အရေးကြီးတဲ့ concept ဖြစ်တဲ့ @Autowired ဆိုတဲ့ Dependency Injection တွေကနေပဲ auto အလုပ်လုပ်ပေးသွားနိုင်ခြင်းဖြစ်တယ်
 //	ပြီးမှ အောက်က data manage လုပ်တဲ့ concept တွေထပ်လာတယ်
 	
