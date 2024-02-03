@@ -18,8 +18,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.dbtest.DBDemo.DTO.AddressDTO;
+import com.dbtest.DBDemo.DTO.ClassroomDTO;
 import com.dbtest.DBDemo.entities.Address;
+import com.dbtest.DBDemo.entities.Classroom;
 import com.dbtest.DBDemo.service.AddressService;
+import com.dbtest.DBDemo.service.ClassroomService;
 import com.dbtest.DBDemo.service.StudentService;
 
 @SpringBootApplication
@@ -37,8 +40,11 @@ public class DbDemoApplication implements CommandLineRunner{
 //	@Autowired
 //	StudentService studentService;
 	
+//	@Autowired
+//	AddressService addressService;
+	
 	@Autowired
-	AddressService addressService;
+	ClassroomService classService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(DbDemoApplication.class, args);
@@ -67,7 +73,10 @@ public class DbDemoApplication implements CommandLineRunner{
 //		add.setA_zipcode(12345);
 //		AddressDTO new_add = addressService.insert(add);
 		
-		
+//		ClassroomDTO classroom = new ClassroomDTO();
+//		classroom.setC_id(1);
+//		classroom.setC_name("Class_A");
+//		ClassroomDTO new_class = classService.insert(classroom);
 		
 	}
 

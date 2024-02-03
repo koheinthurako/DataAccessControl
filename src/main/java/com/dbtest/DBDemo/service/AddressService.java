@@ -10,7 +10,6 @@ import com.dbtest.DBDemo.DTO.AddressDTO;
 public interface AddressService {
 	
 	public List<AddressDTO> findAll();
-	// standard ဖြစ်ချင်ရင် insert နေရာမှာ save နဲ့ရေးကြတယ်
 	public AddressDTO insert(AddressDTO s);
 	public AddressDTO retrieve(int id);
 	public AddressDTO updateStd(AddressDTO std);

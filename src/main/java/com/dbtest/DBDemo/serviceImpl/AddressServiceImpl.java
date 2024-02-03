@@ -70,8 +70,9 @@ public class AddressServiceImpl implements AddressService{
 		if(new_add!=null) {
 			addressRepo.deleteById(old_add.getA_id());
 			return "Deleted!";
+		} else {
+			return "There is no match data in database!";
 		}
-		return null;
 	}
 
 	

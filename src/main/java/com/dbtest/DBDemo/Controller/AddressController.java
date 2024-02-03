@@ -30,30 +30,30 @@ public class AddressController {
 	}
 	
 	@GetMapping("/id/{id}")
-	public ResponseEntity<AddressDTO> getStd(@PathVariable int id) {
-		AddressDTO get_std = addressService.retrieve(id);
-		return (get_std==null) ?
+	public ResponseEntity<AddressDTO> getAddress(@PathVariable int id) {
+		AddressDTO get_address = addressService.retrieve(id);
+		return (get_address==null) ?
 				new ResponseEntity<AddressDTO>(HttpStatus.BAD_REQUEST) :
-				new ResponseEntity<AddressDTO>(get_std, HttpStatus.OK);
+				new ResponseEntity<AddressDTO>(get_address, HttpStatus.OK);
 	}
 	
 	@PostMapping("/save")
-	public ResponseEntity<AddressDTO> saveStd(@RequestBody AddressDTO std) {
-		AddressDTO new_std = addressService.insert(std);
-		return new ResponseEntity<AddressDTO>(new_std, HttpStatus.OK);
+	public ResponseEntity<AddressDTO> saveAddress(@RequestBody AddressDTO address) {
+		AddressDTO new_address = addressService.insert(address);
+		return new ResponseEntity<AddressDTO>(new_address, HttpStatus.OK);
 	}
 	
 	@PutMapping("/update")
-	public ResponseEntity<AddressDTO> updateStd(@RequestBody AddressDTO std) {
-		AddressDTO update_std = addressService.updateStd(std);
-		return (update_std==null) ?
+	public ResponseEntity<AddressDTO> updateAddress(@RequestBody AddressDTO address) {
+		AddressDTO update_address = addressService.updateStd(address);
+		return (update_address==null) ?
 				new ResponseEntity<AddressDTO>(HttpStatus.BAD_REQUEST) :
-				new ResponseEntity<AddressDTO>(update_std, HttpStatus.OK);
+				new ResponseEntity<AddressDTO>(update_address, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/delete")
-	public String deleteById(@RequestBody AddressDTO std) {
-		return addressService.deleteById(std);
+	public String deleteById(@RequestBody AddressDTO address) {
+		return addressService.deleteById(address);
 	}
 
 }
