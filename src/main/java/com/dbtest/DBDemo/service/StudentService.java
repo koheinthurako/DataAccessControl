@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.dbtest.DBDemo.DTO.StdAvg;
 import com.dbtest.DBDemo.DTO.StudentDTO;
-import com.dbtest.DBDemo.entities.Student;
 
 @Service
 //	@Service လို့ထည့်တာက Dependency Injection ရချင်လို့ဖြစ်တယ်
@@ -18,4 +18,6 @@ public interface StudentService {
 	public StudentDTO updateStd(StudentDTO std);
 	public String deleteById(StudentDTO std);
 	public List<StudentDTO> getDistinction(int mark);
+	public StdAvg getAvg();
+	
 }

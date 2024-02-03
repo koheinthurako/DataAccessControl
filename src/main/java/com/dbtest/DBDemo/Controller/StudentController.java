@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dbtest.DBDemo.DTO.StdAvg;
 import com.dbtest.DBDemo.DTO.StudentDTO;
 import com.dbtest.DBDemo.service.StudentService;
 
@@ -75,5 +76,9 @@ public class StudentController {
 		return new ResponseEntity<List<StudentDTO>>(studentService.getDistinction(mark), HttpStatus.OK);
 	}
 	
+	@GetMapping("/getAvg")
+	public ResponseEntity<StdAvg> getAvg() {
+		return new ResponseEntity<StdAvg>(studentService.getAvg(), HttpStatus.OK);
+	}
 	
 }

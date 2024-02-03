@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
+import com.dbtest.DBDemo.DTO.StdAvg;
 import com.dbtest.DBDemo.entities.Student;
 
 @Repository
@@ -26,6 +27,7 @@ public interface StudentRepo extends JpaRepository<Student, Integer> {
 	@Query(value = "select * from student where english>? and myanmar>? and mathematics>?;", nativeQuery = true)
 	public List<Student> getDistinction(int mark, int mark1, int mark2);
 	
-	
+	@Query(value = "select name, (english + myanmar + mathematics)/3 as Average from student where name='hein';", nativeQuery = true)
+	public StdAvg getAvg();
 	
 }

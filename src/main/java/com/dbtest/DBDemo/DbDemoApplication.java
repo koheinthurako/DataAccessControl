@@ -17,6 +17,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.dbtest.DBDemo.DTO.AddressDTO;
+import com.dbtest.DBDemo.entities.Address;
+import com.dbtest.DBDemo.service.AddressService;
 import com.dbtest.DBDemo.service.StudentService;
 
 @SpringBootApplication
@@ -31,8 +34,11 @@ public class DbDemoApplication implements CommandLineRunner{
 //	program အစမှာ Database နဲ့မချိတ်ပေးရင် error တက်မှာမို့ DB နဲ့အရင်ချိတ်ပေးရမယ်
 //	ချိတ်မယ်ဆိုရင် application.properties ထဲမှာ ရေးရမယ်
 	
+//	@Autowired
+//	StudentService studentService;
+	
 	@Autowired
-	StudentService studentService;
+	AddressService addressService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(DbDemoApplication.class, args);
@@ -55,6 +61,11 @@ public class DbDemoApplication implements CommandLineRunner{
 //		Student new_std = studentService.insert(std);
 //		
 //		System.out.println(new_std);
+		
+//		AddressDTO add = new AddressDTO();
+//		add.setA_name("Yangon");
+//		add.setA_zipcode(12345);
+//		AddressDTO new_add = addressService.insert(add);
 		
 		
 		

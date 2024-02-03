@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
+import com.dbtest.DBDemo.DTO.StdAvg;
 import com.dbtest.DBDemo.DTO.StudentDTO;
 import com.dbtest.DBDemo.Repo.StudentRepo;
 import com.dbtest.DBDemo.entities.Student;
@@ -103,6 +104,11 @@ public class StudentServiceImpl implements StudentService{
 		}
 		
 		return dtoList;
+	}
+
+	@Override
+	public StdAvg getAvg() {
+		return studentRepo.getAvg();
 	}
 
 	
