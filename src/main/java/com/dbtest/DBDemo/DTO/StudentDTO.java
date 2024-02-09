@@ -1,6 +1,9 @@
 package com.dbtest.DBDemo.DTO;
 
+import java.util.List;
+
 import com.dbtest.DBDemo.entities.Address;
+import com.dbtest.DBDemo.entities.Classroom;
 import com.dbtest.DBDemo.entities.Student;
 
 import lombok.Getter;
@@ -23,6 +26,7 @@ public class StudentDTO {
 	private int maths;
 	private int total;
 	private Address address;
+	private List<Classroom> classrooms;
 	
 //	@RequestBody(Controller) ကနေ ဝင်လာတဲ့ တန်ဖိုးတွေကို class ထဲက တန်ဖိုးတွေဆီ လှမ်းထည့်တာ
 	public Student convertToEntity(StudentDTO dto) {
@@ -34,6 +38,7 @@ public class StudentDTO {
 		entity.setEng(dto.eng);
 		entity.setMaths(dto.maths);
 		entity.setAddress(dto.getAddress());
+		entity.setClassrooms(dto.getClassrooms());
 		return entity;
 	}
 	
@@ -46,6 +51,7 @@ public class StudentDTO {
 		dto.setEng(std.getEng());
 		dto.setMaths(std.getMaths());
 		dto.setAddress(std.getAddress());
+		dto.setClassrooms(std.getClassrooms());
 		return dto;
 	}
 	

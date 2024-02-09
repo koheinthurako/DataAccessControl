@@ -19,8 +19,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.dbtest.DBDemo.DTO.AddressDTO;
 import com.dbtest.DBDemo.DTO.ClassroomDTO;
+import com.dbtest.DBDemo.DTO.StudentDTO;
 import com.dbtest.DBDemo.entities.Address;
 import com.dbtest.DBDemo.entities.Classroom;
+import com.dbtest.DBDemo.entities.Student;
 import com.dbtest.DBDemo.service.AddressService;
 import com.dbtest.DBDemo.service.ClassroomService;
 import com.dbtest.DBDemo.service.StudentService;
@@ -43,8 +45,8 @@ public class DbDemoApplication implements CommandLineRunner{
 //	@Autowired
 //	AddressService addressService;
 	
-	@Autowired
-	ClassroomService classService;
+//	@Autowired
+//	ClassroomService classService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(DbDemoApplication.class, args);
@@ -58,13 +60,13 @@ public class DbDemoApplication implements CommandLineRunner{
 //		@Autowired လို့ရေးလိုက်တော့ studentService ရဲ့ dependency တွေကိုလိုက်ရှာပြီး ခိုင်းထားတဲ့ annotation တွေအလိုက် inject စလုပ်တယ်
 //		Student.java ထဲကိုသွားကြည့်
 		
-//		Student std = new Student();
+//		StudentDTO std = new StudentDTO();
 //		std.setEmail("koko@gmail.com");
 //		std.setName("ko ko");
 //		std.setEng(60);
 //		std.setMaths(70);
 //		std.setMyan(60);
-//		Student new_std = studentService.insert(std);
+//		StudentDTO new_std = studentService.insert(std);
 //		
 //		System.out.println(new_std);
 		

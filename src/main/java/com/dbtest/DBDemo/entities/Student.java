@@ -1,5 +1,8 @@
 package com.dbtest.DBDemo.entities;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -7,6 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -54,8 +59,16 @@ public class Student {
 //	@JoinColumn(name = "address_id", referencedColumnName = "a_id")
 //	Address address;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@JoinColumn(name="address_id", referencedColumnName = "a_id")
 	Address address;
+
+	@ManyToMany(cascade = CascadeType.MERGE)
+	@JoinTable(
+				name="StdinCLassroom",
+				joinColumns = @JoinColumn(name="s_id"),
+				inverseJoinColumns = @JoinColumn(name="c_id")
+			)
+	List<Classroom> classrooms;
 	
 }
