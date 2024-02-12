@@ -27,6 +27,8 @@ import com.dbtest.DBDemo.service.AddressService;
 import com.dbtest.DBDemo.service.ClassroomService;
 import com.dbtest.DBDemo.service.StudentService;
 
+//	Flow အကျဉ်းချုပ်ကို အောက်ဆုံးမှာကြည့်ပါ
+
 @SpringBootApplication
 public class DbDemoApplication implements CommandLineRunner{
 	
@@ -81,5 +83,29 @@ public class DbDemoApplication implements CommandLineRunner{
 //		ClassroomDTO new_class = classService.insert(classroom);
 		
 	}
+	
+//	ဒီ project က DB ထဲက data တွေကို controller ကနေ လုပ်ချင်သလိုလုပ်နိုင်အောင် ရေးထားတဲ့ project(လူပိန်းမှတ်နည်း)
+//	Controller layer, Service Layer and Data Access Layer တွေပါဝင်တယ်
+//	project flow ကတော့ controller ကနေ ခိုင်းလိုက်တဲ့အရာကို service ပေးရမယ် service ပေးမယ်ဆိုရင် တစ်ခါတည်း 
+//	service implementation နဲ့ controller တိုက်ရိုက် သွားချိတ်ရင်အဆင်မပြေဘူး code ကို manage လုပ်ဖို့ခက်မယ် ဒါကြောင့်
+//	Inheritance နည်းလမ်းအရ interface တစ်ခုခံပြီး Implementation နဲ့ချိတ်စေတယ် ဒါဆိုရင် ImPl အမျိုးမျိုးကို interface ကနေ
+//	PolyMorphism နည်းလမ်းနဲ့ တစ်စုတစ်စည်းထဲ ထိန်းချုပ်နိုင်သွားမယ် ဒါဆိုရင်တော့ controller ကနေ ခိုင်းတဲ့ဟာတွေကို service interface
+//	ကနေတစ်ဆင့် serviceImpl ထဲမှာ အမှန်တကယ် အလုပ်လုပ်နိုင်စေတယ် ပြီးရင်တော့ တကယ် အလုပ်လုပ်မယ်ဆိုရင် database ထဲက data တွေ
+//	ပါဝင်လာရတော့မှာမို့ data access layer လိုလာပြီ အဲ့တာကတော့ Database ထဲကို ဆင်းပြီးအလုပ်လုပ်ပေးနိုင်တဲ့ JPA spring library
+//	HiberNate ဖြစ်တယ် ဒါကြောင့် JPARepositroy က interface မို့ သူ့ကို extends လုပ်နိုင်မယ့် interface တစ်ခုလိုတယ်
+//	HiberNate က java ထဲမှာရေးထားတာမို့ DB နဲ့လှမ်းချိတ်တဲ့အခါ java entity class တစ်ခုလည်းလိုတယ် အဲ့ class ကိုတော့ @Entity
+//	@Annonation နဲ့ class level မှာထည့်ပေးရတယ် @Entity ဆိုတဲ့ @Annonation ကတော့
+//	spring မှာ DB ရဲ့ table တစ်ခုအနေနဲ့သိစေပြီး အလုပ်လုပ်နိုင်တာမို့ HiberNate က java class(DB Table) တစ်ခုနဲ့
+//	Actual MySQL DB ကို ကြားမှာချိတ်ဆက်ပြီးအလုပ်လုပ်ပေးနိုင်စေတယ် ဒါကတော့ Data Access Layer ရဲ့ တာဝန်ဖြစ်တယ် သို့သော်
+//	သတိထားရမှာက security အရ Controller ခိုင်းလိုက်တဲ့ အလုပ်တွေမှာ parameter passing ကနေ ဝင်လာတဲ့ data တွေက
+//	တကယ့် java မှာရေးထားတဲ့ entity class နဲ့ တိုက်ရိုက်သွားချိတ်ပြီး အလုပ်လုပ်နေတာက အဆင်မပြေဘူး ဘာလို့ဆို အဲ့ဒီ class ကို
+//	HiberNate က DB Table တစ်ခုအနေနဲ့ သိနေတာမို့ တကယ့် DB ထဲက data တန်ဖိုးတွေဖြစ်နေတယ် ဒါကြောင့် security မကောင်းတာမို့
+//	Controller ကနေလာတဲ့ data တွေကို လုံခြုံစွာသီးခြားလက်ခံနိုင်တဲ့ class တစ်ခုကို ကြားကခံပြီးတော့မှ တကယ့် java entity class နဲ့
+//	ကြားကခံထားတဲ့ class နဲ့ ချိတ်ဆက်ပြီးမှ အလုပ်လုပ်စေတာက ပိုကောင်းတယ် အဲ့လိုကြားက security ကောင်းအောင်ခံတဲ့ layer ကို
+//	Data Transfer Object Layer(DTO) လို့ခေါ်တယ် ဆိုလိုချင်တာက : 
+//	Controller->DTO->Entity / Entity->DTO->Controller
+//	ကြားထဲမှာ အလုပ်လုပ်ပေးတဲ့ method တွေကတော့ ခုနက service layer တွေက အမြဲအလုပ်လုပ်ပေးနေမယ် ဒါပဲ!
+	
+	
 
 }
