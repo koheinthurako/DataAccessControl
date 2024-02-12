@@ -11,7 +11,8 @@ import com.dbtest.DBDemo.DTO.StdAvg;
 import com.dbtest.DBDemo.entities.Student;
 
 @Repository
-//	@Repository နဲ့ အောက်က @EnableJpaRepositories လို့ရေးလိုက်တာက Dependency Injection ရချင်လို့ဖြစ်တယ်	
+//	@Repository နဲ့ အောက်က @EnableJpaRepositories လို့ရေးလိုက်တာက Dependency Injection ရချင်လို့ဖြစ်တယ်
+//	Dependency Injection ရမှသာ customize method တွေကိုရေးပြီး အလုပ်လုပ်ခိုင်းနိုင်တယ်
 @EnableJpaRepositories
 public interface StudentRepo extends JpaRepository<Student, Integer> {
 //	JpaRepository<database table name, table primary key ရဲ့ data type> => Spring နဲ့ DB ကို ချိတ်ပေးတဲ့ HIBERNATE

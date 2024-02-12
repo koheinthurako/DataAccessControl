@@ -55,6 +55,8 @@ public class Student {
 	@Column(name = "Mathematics")
 	private int maths;
 	
+//	Start mapping below (joining tables)
+	
 //	@OneToOne(fetch = FetchType.EAGER)
 //	@JoinColumn(name = "address_id", referencedColumnName = "a_id")
 //	Address address;
