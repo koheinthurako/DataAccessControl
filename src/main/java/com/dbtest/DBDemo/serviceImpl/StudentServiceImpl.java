@@ -97,6 +97,7 @@ public class StudentServiceImpl implements StudentService{
 	@Override
 	public List<StudentDTO> getDistinction(int mark) {
 		List<Student> stdList = studentRepo.getDistinction(mark, mark, mark);
+//		List<Student> stdList = studentRepo.getPass(mark);
 		List<StudentDTO> dtoList = new ArrayList<StudentDTO>();
 		dtoList.clear();
 		for(Student std : stdList) {
