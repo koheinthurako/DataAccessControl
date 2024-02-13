@@ -31,8 +31,9 @@ public interface StudentRepo extends JpaRepository<Student, Integer> {
 	@Query(value = "select * from student where english>? and myanmar>? and mathematics>?;", nativeQuery = true)
 	public List<Student> getDistinction(int mark, int mark1, int mark2);
 	
-//	@Query(value = "select * from student where english>?1 and myanmar>?1 and mathematics>?1;")
-//	public List<Student> getPass(Integer mark);
+//	အောက်ကလို ရေးရင် query အဆုံးမှာ ";" semicolon ပါလို့မရတာ အထူးသတိထားပါ ပါသွားရင် internal server error
+	@Query(value = "select * from student where english>?1 and myanmar>?1 and mathematics>?1", nativeQuery = true)
+	public List<Student> getPass(Integer mark);
 	
 	@Query(value = "select name, (english + myanmar + mathematics)/3 as Average from student where name='hein';", nativeQuery = true)
 	public StdAvg getAvg();
