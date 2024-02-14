@@ -31,11 +31,16 @@ public interface StudentRepo extends JpaRepository<Student, Integer> {
 	@Query(value = "select * from student where english>? and myanmar>? and mathematics>?;", nativeQuery = true)
 	public List<Student> getDistinction(int mark, int mark1, int mark2);
 	
-//	အောက်ကလို ရေးရင် query အဆုံးမှာ ";" semicolon ပါလို့မရတာ အထူးသတိထားပါ ပါသွားရင် internal server error
+//	Wrapper Integer class ကို သုံးပြီး အောက်ကလို ရေးရင် query အဆုံးမှာ ";" semicolon ပါလို့မရတာ အထူးသတိထားပါ
+//	ပါသွားရင် internal server error တက်မယ်
 	@Query(value = "select * from student where english>?1 and myanmar>?1 and mathematics>?1", nativeQuery = true)
 	public List<Student> getPass(Integer mark);
 	
-	@Query(value = "select name, (english + myanmar + mathematics)/3 as Average from student where name='hein';", nativeQuery = true)
+//	DB ကနေ အောက်ကလို calculation တစ်ခုခုလုပ်လိုက်လို့ ဟိုဘက်က return ပြန်လာမယ့် type က ရောနေမယ်/မရှိဘူးဆိုရင် interface တစ်ခုထုတ်ပြီးလုပ်နိုင်တယ်
+//	အောက်က calculation လုပ်ပြီးရလာတဲ့ name နဲ့ double data types တွေကို ဆောက်လိုက်တဲ့ interface ဘက်မှာ လက်ခံဖို့လိုတယ်
+//	StdAvg.java ထဲမှာသွားကြည့် အဲ့လိုလက်ခံအောင် နာမည်တွေရဲ့ ရှေ့မှာ get ခံပြီးတော့ အောက်မှာရေးထားတဲ့နာမည်အတိုင်း လိုက်ရေးပေးမှသာ အမှန်အလုပ်လုပ်နိုင်မယ်
+//	ဥပမာ - getName(), getAverage() ဆိုတဲ့ interface ထဲက abstract method ပုံစံမျိုးတွေရေးပေးမှသာ hiBernate က အလုပ်လုပ်ပေးနိုင်တယ်
+	@Query(value = "select name, (english + myanmar + mathematics)/3 as Average from student where name='mgmg';", nativeQuery = true)
 	public StdAvg getAvg();
 	
 }
