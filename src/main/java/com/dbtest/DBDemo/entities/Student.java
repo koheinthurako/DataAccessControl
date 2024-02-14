@@ -59,9 +59,14 @@ public class Student {
 	private int maths;
 	
 //	Start mapping below (joining tables)
+//	Mapping ဆိုတာ Table join တာပဲ table နှစ်ခု join တဲ့အခါ DB ဘက်မှာတော့ column name တွေနဲ့အလုပ်လုပ်ကြပေမယ့်
+//	Spring မှာကတော့ Object တွေချိတ်ဆက်ကြတဲ့ပုံစံမျိုးဖြစ်တယ် အဲ့တာကြောင့် ချိတ်မယ့် Object တွေကို import လုပ်ပြီးခေါ်သုံးရတယ်
 	
 //	@OneToOne(fetch = FetchType.EAGER)
+//	FetchType.EAGER က join လုပ်မှ အောက်က address ကိုခေါ်ထုတ်မယ်ဆိုတဲ့ အဓိပ္ပာယ် LAZY ကတော့ ‌Object ကနေမခေါ်လည်း server ပေါ်တင်ပေးတယ်
 //	@JoinColumn(name = "address_id", referencedColumnName = "a_id")
+//	အပေါ်က name နေရာမှာ ကိုယ်ကြိုက်တဲ့ name ကိုရေးလို့ရတယ် referencedColumnName မှာကတော့ spring ထဲက
+//	DB မှာ column အနေနဲ့သိအောင် ပေးထားတဲ့ variable name ကိုပဲထည့်ပေးရမယ်
 //	Address address;
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)

@@ -37,6 +37,8 @@ public class Address {
 	
 //	@JsonIgnore
 //	@OneToOne(mappedBy = "address")
+//	mappedBy = "address" ဆိုတာက Student.java ထဲမှာ ဆောက်ထားတဲ့ address object နဲ့ အောက်က student object တို့ချိတ်မယ်ဆိုတဲ့သဘော
+//	ဒါဆိုရင် student & address တို့ one to one mapping ချိတ်သွားပြီ
 //	Student student;
 
 	@JsonIgnore
